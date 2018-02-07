@@ -1,0 +1,170 @@
+---
+title: Ketopult - Dirty 30
+permalink: /main
+---
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+    <meta name="description" content="{{ site.description }}">
+
+
+    <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+<!--BOOTSTRAP -->
+    <link href="../assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+<!-- dummy font -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+<style>
+body {
+color: #ddd;
+font-family: 'Open Sans Condensed', sans-serif;
+}
+.text-center {
+  text-align: center;
+}
+
+/* ========  !TABS  ========== */
+.tab-header {
+    padding: 80px 0 0 0;
+}
+
+.tab-header h2 {
+    margin-bottom: .85em;
+}
+
+.nav-tabs {
+  border-bottom: 0;
+}
+.nav-tabs .nav-link.active {
+  border-bottom: 5px solid #ff7362;
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+}
+
+h1 + .nav-tabs, h1 + .nav-tabs.nav-justified { /* Adjusts top margin of tabs if h1 is above it */
+    margin-top: -20px;
+    margin-bottom: -14px;
+}
+
+.nav-tabs > li {
+  float: left;
+  margin-bottom: 0;
+}
+
+.nav-tabs > li > a {
+  padding-top: 17px;
+  line-height: 1.42857143em;
+  border: 0;
+  border-radius: 0;
+  text-decoration: none;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+.nav-tabs > li > a:hover {
+  border: 0;
+  background: transparent;
+}
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+  color: #333;
+  cursor: default;
+  background-color: transparent;
+}
+.nav-tabs.nav-justified {
+  border-bottom: 0;
+  margin: 0 auto -14px auto;
+  width: 70%;
+}
+.nav-tabs.nav-justified > li {
+  float: none;
+  font-size: 24px;
+  font-weight: 600;
+}
+.nav-tabs.nav-justified > li > a {
+  margin-bottom: 5px;
+  text-align: center;
+  padding-left: 0px;
+  padding-right: 0px;
+  color: #4a4a4a;
+}
+.nav-tabs.nav-justified > .dropdown .dropdown-menu {
+  top: auto;
+  left: auto;
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li {
+    display: table-cell;
+    width: 1%;
+  }
+  .nav-tabs.nav-justified > li > a {
+    margin-bottom: 0;
+  }
+}
+.nav-tabs.nav-justified > li > a {
+  margin-right: 0;
+  border-radius: 0;
+}
+.nav-tabs.nav-justified > .active > a,
+.nav-tabs.nav-justified > .active > a:hover,
+.nav-tabs.nav-justified > .active > a:focus {
+}
+@media (min-width: 768px) {
+  .nav-tabs.nav-justified > li > a {
+    border-bottom: 0;
+    border-radius: 0;
+  }
+  .nav-tabs.nav-justified > li > a:hover {
+    border: 0;
+    background: transparent;
+  }
+
+}
+</style>
+</head>
+<body>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row">
+        <div class="col text-center">
+          <h1>Dirty 30 </h1>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col text-center">
+          <!-- Nav tabs -->
+          <ul class="nav nav-tabs nav-justified" role="tablist" id="myTab">
+            <li class="nav-item" role="presentation">
+              <a class="nav-link active" data-toggle="tab" href="#eat" role="tab">Eat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#fit" role="tab">Fit</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#log" role="tab">Log</a>
+            </li>
+          </ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content">
+            <div class="tab-pane active" id="eat" role="tabpanel">tab 1</div>
+            <div class="tab-pane" id="fit" role="tabpanel">tab 2</div>
+            <div class="tab-pane" id="log" role="tabpanel">tab 3</div>
+          </div>
+          <!-- Placed at the end of the document so the pages load faster -->
+             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+             <script src="assets/js/bootstrap/bootstrap.min.js"></script>
+<script>
+$('#myTab a').click(function (e) {
+  e.preventDefault()
+  $(this).tab('show')
+})
+</script>
+</body>

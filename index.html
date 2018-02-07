@@ -1,0 +1,75 @@
+
+<html>
+    <head>
+
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width initial-scale=1" />
+        <meta name="robots" content="noindex, nofollow" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}</title>
+        <meta name="description" content="{{ site.description }}">
+
+
+        <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+
+    <!--BOOTSTRAP -->
+        <link href="../assets/css/bootstrap/bootstrap.min.css" rel="stylesheet" type="text/css">
+
+    <!-- dummy font -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
+<style>
+body {
+  background-color: #ff7362;
+  color: #fff;
+  font-family: 'Open Sans Condensed', sans-serif;
+}
+a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: #fff;
+}
+h1 {
+  font-size: 21px;
+  font-weight: 300;
+}
+h2 {
+  opacity: .5;
+  font-size: 21px;
+}
+.text-center {
+  text-align: center;
+}
+.padding200 {
+  padding: 200px 0px;
+}
+.headline {
+  margin-bottom: 100px;
+}
+</style>
+    </head>
+  <body>
+  <a href="/main">
+    <div class="container-fluid">
+      <div class="container">
+        <div class="row">
+          <div class="col text-center padding200">
+            <div class="headline">
+              <img src="assets/images/logo/Ketopult_Logo.png">
+              <h1> Launch yourself into a healthy ketosis </h1>
+            </div>
+            <div class="minor">
+              <h1>instructions + 30 Day Challenge </h1>
+              <h2>Alpha 1.0 </h2>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </a>
+
+  </body>
+</html>
