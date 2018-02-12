@@ -21,135 +21,11 @@ permalink: /grocery
 <!-- dummy font -->
 <link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300" rel="stylesheet">
 
-<style>
-body {
-color: #ddd;
-font-family: 'Open Sans Condensed', sans-serif;
-}
-.text-center {
-  text-align: center;
-}
-.text-right {
-  text-align: right;
-}
-.nopadding {
-  padding: 0px;
-}
-.salmon {
-  background-color: #ff7362;
-}
-.green {
-  background-color: #86cc3b;
-}
-h4 {
-  color: #4a4a4a;
-  font-size: 24px;
-  font-weight: bold;
-  margin: 0px;
-}
-p {
-  color: #9b9b9b;
-  font-size: 16px;
-  margin-bottom: 0px;
-}
-.tb-padding10 {
-  padding: 10px;
-}
-.padding10 {
-  padding: 10px;
-}
+<!--CSS sheet for grocery list -->
+<link href="../assets/css/custom-sheets/grocery.min.css" rel="stylesheet" type="text/css">
 
-* {
-    box-sizing: border-box;
-}
-
-/* Remove margins and padding from the list */
-ul {
-    margin: 0;
-    padding: 0;
-}
-
-/* Style the list items */
-ul li {
-    cursor: pointer;
-    position: relative;
-    padding: 12px 8px 12px 40px;
-    font-size: 18px;
-    transition: 0.2s;
-    list-style-type: none;
-    border-bottom: 1px solid #dcdcdc;
-
-    /* make the list items unselectable */
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-}
-
-/* When clicked on, add a background color and strike out text */
-ul li.checked {
-    background: #888;
-    color: #fff;
-    text-decoration: line-through;
-}
-
-ul li:before {
-  content: '';
-  position: absolute;
-  border-color: #fff;
-  border-style: solid;
-  top: 10px;
-  left: 16px;
-  height: 15px;
-  width: 15px;
-}
-
-/* Add a "checked" mark when clicked on */
-ul li.checked::before {
-    content: '';
-    position: absolute;
-    border-color: #fff;
-    border-style: solid;
-    border-width: 0 2px 2px 0;
-    top: 10px;
-    left: 16px;
-    transform: rotate(45deg);
-    height: 15px;
-    width: 7px;
-}
-
-/* Style the close button */
-.close {
-    position: absolute;
-    right: 0;
-    top: 0;
-    padding: 12px 16px 12px 16px;
-}
-
-.close:hover {
-    background-color: #f44336;
-    color: white;
-}
-
-/* Style the header */
-.header {
-    background-color: #f44336;
-    padding: 30px 40px;
-    color: white;
-    text-align: center;
-}
-
-/* Clear floats after the header */
-.header:after {
-    content: "";
-    display: table;
-    clear: both;
-}
-
-
-
-</style>
 </head>
+
 <body>
   <div class="container-fluid salmon tb-padding10">
     <div class="container">
@@ -162,12 +38,12 @@ ul li.checked::before {
   </div>
   <div class="container-fluid">
     <div class="container">
-      <div class="row">
-        <div class="col-6">
-          <h3>Grocery</h3>
+      <div class="row tb-padding10">
+        <div class="col-6 nopadding">
+          <h3 class="underline">Grocery</h3>
         </div>
-        <div class="col-6 text-right">
-          <h3>Reset All</h3>
+        <div class="col-6 text-right nopadding">
+          <a id="reset"><h3>Reset All</h3></a>
         </div>
       </div>
     </div>
@@ -175,9 +51,11 @@ ul li.checked::before {
   <div class="container-fluid green padding10">
     <div class="container">
       <div class="row">
-        <div class="col">
-          <h4> Fruits and Veggies </h4>
-          <p> Organic + Locally Sourced </p>
+        <div class="col alignment">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h4> Fruits and Veggies </h4>
+            <p> Organic + Locally Sourced </p>
+          </a>
         </div>
       </div>
     </div>
@@ -185,58 +63,160 @@ ul li.checked::before {
   <div class="container-fluid nopadding">
     <div class="container nopadding">
       <div class="row">
-        <div class="col">
-          <!-- checklist here -->
-          <ul id="myUL">
-            <li>Avocados</li>
-            <li>Power Greens</li>
-            <li>Garlic</li>
-            <li>Broccoli</li>
-            <li>Crimini Mushrooms</li>
-            <li>Asparagus</li>
-            <li>Heirloom Tomatoes</li>
-            <li>Zucchini</li>
-            <li>Bell Peppers</li>
-            <li>Onions</li>
-            <li>Celery</li>
-            <li>Cauliflower (or Cauli rice)</li>
-            <li>Parsley</li>
-            <li>Blackberries</li>
-            <li>Blueberries</li>
-            <li>Strawberries</li>
-            <li>Seaweed Snacks</li>
-            <li>Purple Cabbage</li>
-            <li>Green Olives</li>
-            <li>Cucumber</li>
-            <li>Artichokes</li>
-            <li>Hummus</li>
-            <li>Lemons / Limes</li>
-            <li>Shallots</li>
-            <li>Baby Carrots</li>
-          </ul>
-          <!--ends checklist -->
-        </div>
+        <div id="collapseOne" class="collapse col show" role="tabpanel" aria-labelledby="headingOne">
+          <div class="well">
+            <!-- checklist here -->
+            <ul class="list-group checked-list-box">
+                    <li class="list-group-item" data-style="button">Avocados</li>
+                    <li class="list-group-item" data-style="button">Power Greens</li>
+                    <li class="list-group-item" data-style="button">Garlic</li>
+                    <li class="list-group-item" data-style="button">Broccoli</li>
+                    <li class="list-group-item" data-style="button">Crimini Mushrooms</li>
+                    <li class="list-group-item" data-style="button">Asparagus</li>
+                    <li class="list-group-item" data-style="button">Heirloom Tomatoes</li>
+                    <li class="list-group-item" data-style="button">Zucchini</li>
+                    <li class="list-group-item" data-style="button">Bell Peppers</li>
+                    <li class="list-group-item" data-style="button">Onions</li>
+                    <li class="list-group-item" data-style="button">Celery</li>
+                    <li class="list-group-item" data-style="button">Cauliflower (or Cauli rice)</li>
+                    <li class="list-group-item" data-style="button">Parsley</li>
+                    <li class="list-group-item" data-style="button">Blackberries</li>
+                    <li class="list-group-item" data-style="button">Blueberries</li>
+                    <li class="list-group-item" data-style="button">Strawberries</li>
+                    <li class="list-group-item" data-style="button">Seaweed Snacks</li>
+                    <li class="list-group-item" data-style="button">Purple Cabbage</li>
+                    <li class="list-group-item" data-style="button">Green Olives</li>
+                    <li class="list-group-item" data-style="button">Cucumber</li>
+                    <li class="list-group-item" data-style="button">Artichokes</li>
+                    <li class="list-group-item" data-style="button">Hummus</li>
+                    <li class="list-group-item" data-style="button">Lemons / Limes</li>
+                    <li class="list-group-item" data-style="button">Shallots</li>
+                    <li class="list-group-item" data-style="button">Baby Carrots</li>
+                  </ul>
+            <!--ends checklist -->
+          </div>
+        </div><!-- ends the accordion -->
       </div>
     </div>
   </div>
 
-          <!-- Placed at the end of the document so the pages load faster -->
-             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-             <script src="assets/js/bootstrap/bootstrap.min.js"></script>
 
-             <script>
-             var myNodelist = document.getElementsByTagName("LI");
+  <!--FATS NUTS AND DAIRY -->
+  <div class="container-fluid tan padding10">
+    <div class="container">
+      <div class="row">
+        <div class="col alignment">
+          <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <h4> Fats, Nuts & Dairy  </h4>
+            <p> Organic or Grass Fed, Full fat </p>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container-fluid nopadding">
+    <div class="container nopadding">
+      <div class="row">
+        <div id="collapseTwo" class="collapse col" role="tabpanel" aria-labelledby="headingTwo">
+          <div class="well">
+            <!-- checklist here -->
+            <ul class="list-group checked-list-box">
+                    <li class="list-group-item" data-style="button">Avocado Oil</li>
+                    <li class="list-group-item" data-style="button">EVOO</li>
+                    <li class="list-group-item" data-style="button">Grass Fed Butter</li>
+                    <li class="list-group-item" data-style="button">Macadamia Nuts / Almonds </li>
+                    <li class="list-group-item" data-style="button">Cheeses</li>
+                    <li class="list-group-item" data-style="button">Cream Cheese</li>
+                    <li class="list-group-item" data-style="button">Heavy Cream</li>
+                    <li class="list-group-item" data-style="button">Almond Butter</li>
+                    <li class="list-group-item" data-style="button">Pumpkin Seeds</li>
+                    <li class="list-group-item" data-style="button">Sunflower Seeds</li>
+                    <li class="list-group-item" data-style="button">80% Dark Chocolate</li>
+                  </ul>
+            <!--ends checklist -->
+          </div>
+        </div><!-- ends the accordion -->
+      </div>
+    </div>
+  </div>
 
-                // Add a "checked" symbol when clicking on a list item
-                var list = document.querySelector('ul');
-                list.addEventListener('click', function(ev) {
-                if (ev.target.tagName === 'LI') {
-                 ev.target.classList.toggle('checked');
-                }
-                }, false);
+
+<!-- MEATS -->
+<div class="container-fluid salmon padding10">
+  <div class="container">
+    <div class="row">
+      <div class="col alignment">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          <h4> Meats  </h4>
+          <p class="darkgray">Grass Fed / Pasture Raised /Wild Caught </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid nopadding">
+  <div class="container nopadding">
+    <div class="row">
+      <div id="collapseThree" class="collapse col" role="tabpanel" aria-labelledby="headingThree">
+        <div class="well">
+          <!-- checklist here -->
+          <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-style="button">Eggs</li>
+                  <li class="list-group-item" data-style="button">Ribeye / New York strips</li>
+                  <li class="list-group-item" data-style="button">High fat Ground Beef</li>
+                  <li class="list-group-item" data-style="button">Uncured / Nitrate Free Bacon</li>
+                  <li class="list-group-item" data-style="button">Salmon</li>
+                  <li class="list-group-item" data-style="button">Ahi Tuna</li>
+                  <li class="list-group-item" data-style="button">Chicken thighs</li>
+                  <li class="list-group-item" data-style="button">Lamb Shanks</li>
+                </ul>
+          <!--ends checklist -->
+        </div>
+      </div><!-- ends the accordion -->
+    </div>
+  </div>
+</div>
 
 
 
-             </script>
 
+<!-- DRINKS -->
+<div class="container-fluid teal padding10">
+  <div class="container">
+    <div class="row">
+      <div class="col alignment">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          <h4> Drinks</h4>
+          <p> No natural/artificial sweeteners  </p>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="container-fluid nopadding">
+  <div class="container nopadding">
+    <div class="row">
+      <div id="collapseFour" class="collapse col" role="tabpanel" aria-labelledby="headingFour">
+        <div class="well">
+          <!-- checklist here -->
+          <ul class="list-group checked-list-box">
+                  <li class="list-group-item" data-style="button">Sparkling Water</li>
+                  <li class="list-group-item" data-style="button">Coffee</li>
+                  <li class="list-group-item" data-style="button">Green Tea</li>
+                  <li class="list-group-item" data-style="button">Apple Cider Vinegar</li>
+                  <li class="list-group-item" data-style="button">Lemon / Lime Juice</li>
+                  <li class="list-group-item" data-style="button">Hipster Bone Broth</li>
+                  <li class="list-group-item" data-style="button">Dry Red Wine</li>
+                  <li class="list-group-item" data-style="button">Whiskey / Vodka / Tequila</li>
+                </ul>
+          <!--ends checklist -->
+        </div>
+      </div><!-- ends the accordion -->
+    </div>
+  </div>
+</div>
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+<script src="assets/js/bootstrap/bootstrap.min.js"></script>
+<script src="assets/js/custom-sheets/grocery.min.js"></script>
 </body>
