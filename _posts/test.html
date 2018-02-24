@@ -30,8 +30,33 @@ permalink: /grocery
 .keto-font {
   font-family: 'Amatic SC', cursive;
 }
-.lightgray {
-  background-color: #f5f5f5;
+.tab-content>.active {
+    display: inline;
+}
+.nav-tabs {
+  border-bottom-style: none;
+  color: #fff;
+}
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+  border-bottom: 1px solid #fff;
+  color: #fff;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+}
+.nav-tabs .nav-link:hover {
+  border-left-style: none;
+  border-right-style: none;
+  border-top-style: none;
+}
+ul.nav.nav-tabs li {
+  margin: 0 auto;
+  border-bottom-style: none;
+  padding: 0px;
+}
+ul.nav li.fake-li {
+  border-bottom-style: none;
 }
 a {
   color: #fff;
@@ -46,31 +71,9 @@ a.keto-font {
 #gym {
   display: none;
 }
-.nav-tabs .nav-link {
-  font-family: 'Amatic SC', cursive;
-  font-size: 25px;
-  padding-bottom: 1px;
-  border-style: none;
-}
-.nav-tabs .nav-link.active {
-  color: #fff;
-  font-family: 'Amatic SC', cursive;
-  font-size: 25px;
-  background-color: transparent;
-  border-color: transparent;
-  border-bottom: 1px solid #fff;
-}
-.nav-tabs {
-  border-bottom-style: none;
-}
-
-ul.nav.nav-tabs li {
-  padding: 0px;
-  margin: 0 auto;
-  border-bottom-style: none;
-}
-.padding30-50 {
-  padding: 30px 50px;
+a:not([href]):not([tabindex]) {
+    color: #fff;
+    text-decoration: none;
 }
 </style>
 </head>
@@ -84,32 +87,27 @@ ul.nav.nav-tabs li {
           <img src="assets/images/logo/Ketopult_Logo.png">
         </div>
       </div>
-      <ul class="nav nav-tabs" role="tablist">
-        <li class="nav-item">
-          <a class="nav-link active" href="#grocery" role="tab" data-toggle="tab">Grocery List</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#workout" role="tab" data-toggle="tab">Workouts</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-<div class="tab-content">
-
-  <div role="tabpanel" class="tab-pane in active" id="grocery">
-  <!-- <div id="grocery"> -->
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row padding15-50">
-          <div class="col nopadding text-center">
-            <a id="reset">
-              <p>Buy enough of the items near the top of each section to eat every day. Items at the bottom, only enough for once a week. Add any low carb, whole foods you'd like.</p>
-            </a>
-          </div>
+      <div class="row text-center">
+        <div class="col-6">
+          <a id="nav1" class="keto-font underline">Grocery List</a>
+        </div>
+        <div class="col-6">
+          <a id="nav2" class="keto-font underline">Workouts</a>
         </div>
       </div>
     </div>
-    <div class="container-fluid lightgray padding10 border-bottom-row">
+  </div>
+  <div class="container-fluid">
+    <div class="container">
+      <div class="row tb-padding10">
+        <div class="col-6 nopadding">
+          <p>Buy enough of the items near the top of each section to eat every day. Items at the bottom, only enough for once a week. Add any low carb, whole foods you'd like.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div id="grocery">
+    <div class="container-fluid green padding10">
       <div class="container">
         <div class="row">
           <div class="col alignment">
@@ -163,7 +161,7 @@ ul.nav.nav-tabs li {
 
 
     <!--FATS NUTS AND DAIRY -->
-    <div class="container-fluid lightgray padding10 border-bottom-row">
+    <div class="container-fluid tan padding10">
       <div class="container">
         <div class="row">
           <div class="col alignment">
@@ -203,7 +201,7 @@ ul.nav.nav-tabs li {
 
 
   <!-- MEATS -->
-  <div class="container-fluid lightgray padding10 border-bottom-row">
+  <div class="container-fluid salmon padding10">
     <div class="container">
       <div class="row">
         <div class="col alignment">
@@ -242,7 +240,7 @@ ul.nav.nav-tabs li {
 
 
   <!-- DRINKS -->
-  <div class="container-fluid lightgray padding10 border-bottom-row">
+  <div class="container-fluid teal padding10">
     <div class="container">
       <div class="row">
         <div class="col alignment">
@@ -278,17 +276,17 @@ ul.nav.nav-tabs li {
   </div>
 </div> <!-- ends grocery list -->
 
-<div role="tabpanel" class="tab-pane" id="workout">
+<div id="gym">
   <div class="container-fluid">
     <div class="container">
-      <div class="row padding30-50">
+      <div class="row tb-padding10">
         <div class="col nopadding text-center">
           <p>Great, you're here! Now that the hard part is over, enjoy the workout.</p>
         </div>
       </div>
     </div>
   </div>
-  <div class="container-fluid lightgray padding10 border-bottom-row">
+  <div class="container-fluid lightgray padding10">
     <div class="container">
       <div class="row">
         <div class="col alignment">
@@ -297,239 +295,18 @@ ul.nav.nav-tabs li {
       </div>
     </div>
   </div>
-  <style>
-  .padding15-50 {
-    padding: 15px 50px;
-  }
-  #gym .alignment {
-    margin-left: 10px;
-  }
-  .border-bottom-row {
-    border-bottom: 1px solid rgba(0,0,0,.125);
-  }
-  .teal-circle,
-  .yellow-circle,
-  .salmon-circle,
-  .blue-circle,
-  .violet-circle,
-  .brown-circle,
-  .limegreen-circle {
-    text-align: center;
-    color: #fff;
-    width: 45px;
-    height: 45px;
-    -moz-border-radius: 50px;
-  	-webkit-border-radius: 50px;
-  	border-radius: 50px;
-}
-  .teal-circle {
-    background-color:#47e4c2;
-  }
-.yellow-circle {
-  background-color: #ffc358;
-}
-.salmon-circle {
-  background-color: #ff7762;
-}
-.blue-circle {
-  background-color: #62a2b5;
-}
-.violet-circle {
-  background-color: #AB708F;
-}
-.limegreen-circle {
-  background-color: #C3E59D;
-}
-.teal-circle h3,
-.yellow-circle h3,
-.salmon-circle h3,
-.blue-circle h3,
-.violet-circle h3,
-.brown-circle h3,
-.limegreen-circle h3 {
-  margin-bottom: 0px;
-  padding-top: 8px;
-  color: #fff;
-}
-p.main-header {
-  color: #4a4a4a;
-  font-weight: bold;
-}
-p.sub {
-  font-size: 14px;
-}
-.nopadding-right {
-  padding-right: 0px;
-}
-  </style>
-  <div class="container-fluid padding10 border-bottom-row">
+  <div class="container-fluid padding10">
     <div class="container">
       <div class="row">
-        <div class="col alignment nopadding-right">
-          <a href="https://www.fitnessblender.com/videos/relaxing-stretching-workout-for-flexibility-and-stress-relief-full-body-yoga-pilates-blend" target="_blank">
-            <div class="teal-circle">
-              <h3>A</h3>
-            </div>
+        <div class="col alignment">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <h4 class="keto-font"> Stretch </h4>
           </a>
-        </div>
-        <div class="col-6">
-          <a href="https://www.fitnessblender.com/videos/relaxing-stretching-workout-for-flexibility-and-stress-relief-full-body-yoga-pilates-blend" target="_blank">
-            <p class="main-header">Stretching video A </p>
-            <p class="sub">Stress relief </p>
-          </a>
-        </div>
-        <div class="col">
-          <a href="https://www.fitnessblender.com/videos/relaxing-stretching-workout-for-flexibility-and-stress-relief-full-body-yoga-pilates-blend" target="_blank">
-            <img src="../assets/images/Play.svg" style="height: 35px; width: 100%; margin-top: 6px;">
-          </a>
-        </div>
         </div>
       </div>
     </div>
-
-
-    <div class="container-fluid padding10 border-bottom-row">
-      <div class="container">
-        <div class="row">
-          <div class="col alignment nopadding-right">
-            <a href="https://www.fitnessblender.com/videos/3-day-flexibility-challenge-day-3-static-stretches-for-flexibility-and-range-of-motion" target="_blank">
-              <div class="yellow-circle">
-                <h3>B</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-6">
-            <a href="https://www.fitnessblender.com/videos/3-day-flexibility-challenge-day-3-static-stretches-for-flexibility-and-range-of-motion" target="_blank">
-              <p class="main-header">Stretching video B </p>
-              <p class="sub">Range of Motion </p>
-            </a>
-          </div>
-          <div class="col">
-            <a href="https://www.fitnessblender.com/videos/3-day-flexibility-challenge-day-3-static-stretches-for-flexibility-and-range-of-motion" target="_blank">
-              <img src="../assets/images/Play.svg" style="height: 35px; width: 100%; margin-top: 6px;">
-            </a>
-          </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid padding10 border-bottom-row">
-        <div class="container">
-          <div class="row">
-            <div class="col alignment nopadding-right">
-              <a href="https://www.fitnessblender.com/videos/refresh-relax-and-restore-stretching-workout-for-tight-muscles" target="_blank">
-                <div class="violet-circle">
-                  <h3>C</h3>
-                </div>
-              </a>
-            </div>
-            <div class="col-6">
-              <a href="https://www.fitnessblender.com/videos/refresh-relax-and-restore-stretching-workout-for-tight-muscles" target="_blank">
-                <p class="main-header">Stretching video C </p>
-                <p class="sub">Muscle Relaxation </p>
-              </a>
-            </div>
-            <div class="col">
-              <a href="https://www.fitnessblender.com/videos/refresh-relax-and-restore-stretching-workout-for-tight-muscles" target="_blank">
-                <img src="../assets/images/Play.svg" style="height: 35px; width: 100%; margin-top: 6px;">
-              </a>
-            </div>
-            </div>
-          </div>
-        </div>
-
-
-    <div class="container-fluid padding10 border-bottom-row lightgray">
-      <div class="container">
-        <div class="row">
-          <div class="col alignment">
-              <h4 class="keto-font"> Lift </h4>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container-fluid padding10 border-bottom-row">
-      <div class="container">
-        <div class="row">
-          <div class="col alignment nopadding-right">
-            <a href="https://www.fitnessblender.com/videos/functional-upper-body-workout-for-strength-and-coordination" target="_blank">
-              <div class="salmon-circle">
-                <h3>A</h3>
-              </div>
-            </a>
-          </div>
-          <div class="col-6">
-            <a href="https://www.fitnessblender.com/videos/functional-upper-body-workout-for-strength-and-coordination" target="_blank">
-              <p class="main-header">Lifting video A </p>
-              <p class="sub">Upper Body </p>
-            </a>
-          </div>
-          <div class="col">
-            <a href="https://www.fitnessblender.com/videos/functional-upper-body-workout-for-strength-and-coordination" target="_blank">
-              <img src="../assets/images/Play.svg" style="height: 35px; width: 100%; margin-top: 6px;">
-            </a>
-          </div>
-          </div>
-        </div>
-      </div>
-      <div class="container-fluid padding10 border-bottom-row">
-        <div class="container">
-          <div class="row">
-            <div class="col alignment nopadding-right">
-              <a href="https://www.fitnessblender.com/videos/mass-building-lower-body-workout" target="_blank">
-                <div class="blue-circle">
-                  <h3>B</h3>
-                </div>
-              </a>
-            </div>
-            <div class="col-6">
-              <a href="https://www.fitnessblender.com/videos/mass-building-lower-body-workout" target="_blank">
-                <p class="main-header">Lifting video B </p>
-                <p class="sub">Lower Body Strength </p>
-              </a>
-            </div>
-            <div class="col">
-              <a href="https://www.fitnessblender.com/videos/mass-building-lower-body-workout" target="_blank">
-                <img src="../assets/images/Play.svg" style="height: 35px; width: 100%; margin-top: 6px;">
-              </a>
-            </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="container-fluid padding10 border-bottom-row">
-          <div class="container">
-            <div class="row">
-              <div class="col alignment nopadding-right">
-                <a href="https://www.fitnessblender.com/videos/total-body-strength-workout-for-people-who-get-bored-easily-total-body-burnout" target="_blank">
-                  <div class="limegreen-circle">
-                    <h3>C</h3>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6">
-                <a href="https://www.fitnessblender.com/videos/total-body-strength-workout-for-people-who-get-bored-easily-total-body-burnout" target="_blank">
-                  <p class="main-header">Lifting video C </p>
-                  <p class="sub">Total Body </p>
-                </a>
-              </div>
-              <div class="col">
-                <a href="https://www.fitnessblender.com/videos/total-body-strength-workout-for-people-who-get-bored-easily-total-body-burnout" target="_blank">
-                  <img src="../assets/images/Play.svg" style="height: 35px; width: 100%; margin-top: 6px;">
-                </a>
-              </div>
-              </div>
-            </div>
-          </div>
-
-
-
-</div>
-
-
   </div>
+</div>
 
 
 <!-- Placed at the end of the document so the pages load faster -->

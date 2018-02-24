@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="31px" height="31px" viewBox="0 0 31 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="MVP-Workouts" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-305.000000, -394.000000)">
+        <g id="Group" transform="translate(305.000000, 394.000000)" fill="#00AEEF">
+            <g id="Group-3">
+                <circle id="Oval" fill-opacity="0.0955615942" cx="15.5" cy="15.5" r="15.5"></circle>
+                <polygon id="Triangle" transform="translate(18.000000, 15.500000) rotate(90.000000) translate(-18.000000, -15.500000) " points="18 9 26 22 10 22"></polygon>
+            </g>
+        </g>
+    </g>
+</svg>
